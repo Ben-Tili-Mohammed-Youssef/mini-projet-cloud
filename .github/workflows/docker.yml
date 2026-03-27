@@ -24,3 +24,7 @@ jobs:
         context: ./app1
         push: true
         tags: mohammedyoussefbentili/mini-projet-cloud:latest
+    - name: Lancer docker-compose
+      run: |
+        docker compose up -d --build
+        docker compose ps
