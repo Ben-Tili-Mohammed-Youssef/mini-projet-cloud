@@ -4,6 +4,7 @@ import redis
 import time
 import json
 import uuid
+import socket
 
 app = Flask(__name__)
 app.config['JSON_AS_ASCII'] = False
@@ -95,7 +96,8 @@ def home():
     visits = cache.incr('visits')
     return jsonify({
         "message": "TODO API avec MySQL + Redis !",
-        "visites": visits
+        "visites": visits,
+        "conteneur": socket.gethostname() 
     })
 
 # -----------------------------------------------
